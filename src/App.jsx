@@ -1,6 +1,6 @@
 import { Suspense } from "react";
-import { Routes, Route } from "react-router-dom"; // Import Route from react-router-dom
-import routes from "./router/Router"; // Adjust path as per your project structure
+import { Routes, Route } from "react-router-dom"; 
+import routes from "./router/Router"; 
 
 function App() {
   return (

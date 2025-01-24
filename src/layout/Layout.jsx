@@ -13,7 +13,7 @@ function Layout() {
       />
       <div className="flex-1  flex flex-col">
         <Header onMenuClick={() => setIsSidebarOpen(true)} />
-        <main className="flex-1 p-6 overflow-y-auto mt-8 mb-8"> {/* Add overflow-auto here */}
+        <main className="flex-1 p-6 overflow-y-auto mt-8 mb-8"> 
           <Outlet />
         </main>
       </div>
