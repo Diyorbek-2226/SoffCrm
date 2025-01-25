@@ -2,7 +2,9 @@ import { lazy } from "react";
 import Layout from "../layout/Layout";
 
 const Analitika = lazy(() => import("../pages/analitika/Analitika"));
-const Settings = lazy(() => import("../pages/setings/Setings"));
+const Sozlamalar = lazy(() => import("../pages/setings/umumiy/Sozlamalar"));
+const Check = lazy(() => import("../pages/setings/umumiy/Check"));
+const Filiallar = lazy(() => import("../pages/setings/umumiy/Filiallar"));
 
 const routes = [
   {
@@ -17,8 +19,18 @@ const routes = [
       },
       {
         id: 3,
-        path: "/setings",
-        element: <Settings/>,
+        path: "sozlamalar",
+        element: <Sozlamalar />,
+      },
+      {
+        id: 4,
+        path: "sozlamalar/check",
+        element: <Check />,
+      },
+      {
+        id: 5,
+        path: "sozlamalar/filiallar",
+        element: <Filiallar />,
       },
     ],
   },
