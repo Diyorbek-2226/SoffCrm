@@ -8,7 +8,7 @@ function Sidebar() {
     { icon: Building2, label: "Filiallar", pathName: "filiallar" },
     { icon: Bell, label: "Xabarnomalar", pathName: "xabarnomalar" },
     { icon: ClipboardList, label: "So'rovnoma", pathName: "sorovnoma" },
-    { icon: Phone, label: "Raqamni belgilash", pathName: "raqamni-belgilash" },
+    { icon: Phone, label: "Raqamni belgilash", pathName: "raqamnibelgilash" },
   ];
 
   return (

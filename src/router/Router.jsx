@@ -5,6 +5,9 @@ const Analitika = lazy(() => import("../pages/analitika/Analitika"));
 const Sozlamalar = lazy(() => import("../pages/setings/umumiy/Sozlamalar"));
 const Check = lazy(() => import("../pages/setings/umumiy/Check"));
 const Filiallar = lazy(() => import("../pages/setings/umumiy/Filiallar"));
+const Xabarnoma = lazy(() => import("../pages/setings/umumiy/Xabarnoma"));
+const Sorovnoma = lazy(() => import("../pages/setings/umumiy/Sorovnoma"));
+const RaqamniBelgilash = lazy(() => import("../pages/setings/umumiy/RaqamniBelgilash"));
 
 const routes = [
   {
@@ -31,6 +34,21 @@ const routes = [
         id: 5,
         path: "sozlamalar/filiallar",
         element: <Filiallar />,
+      },
+      {
+        id: 6,
+        path: "sozlamalar/xabarnomalar",
+        element: <Xabarnoma />,
+      },
+      {
+        id: 7,
+        path: "sozlamalar/sorovnoma",
+        element: <Sorovnoma />,
+      },
+      {
+        id: 8,
+        path: "sozlamalar/raqamnibelgilash",
+        element: <RaqamniBelgilash />,
       },
     ],
   },
