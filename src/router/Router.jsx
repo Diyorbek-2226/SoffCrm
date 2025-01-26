@@ -1,6 +1,7 @@
 import { lazy } from "react";
 import Layout from "../layout/Layout";
 
+
 const Analitika = lazy(() => import("../pages/analitika/Analitika"));
 const Sozlamalar = lazy(() => import("../pages/setings/umumiy/Sozlamalar"));
 const Check = lazy(() => import("../pages/setings/umumiy/Check"));
@@ -8,6 +9,7 @@ const Filiallar = lazy(() => import("../pages/setings/umumiy/Filiallar"));
 const Xabarnoma = lazy(() => import("../pages/setings/umumiy/Xabarnoma"));
 const Sorovnoma = lazy(() => import("../pages/setings/umumiy/Sorovnoma"));
 const RaqamniBelgilash = lazy(() => import("../pages/setings/umumiy/RaqamniBelgilash"));
+const Groups = lazy(() => import("../pages/groups/Groups"));
 
 const routes = [
   {
@@ -49,6 +51,11 @@ const routes = [
         id: 8,
         path: "sozlamalar/raqamnibelgilash",
         element: <RaqamniBelgilash />,
+      },
+      {
+        id: 9,
+        path: "/group",
+        element: <Groups/>,
       },
     ],
   },
