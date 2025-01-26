@@ -1,5 +1,6 @@
 import { lazy } from "react";
 import Layout from "../layout/Layout";
+import GroupsInfo from "../pages/groups/GroupsInfo";
 
 
 const Analitika = lazy(() => import("../pages/analitika/Analitika"));
@@ -56,6 +57,11 @@ const routes = [
         id: 9,
         path: "/group",
         element: <Groups/>,
+      },
+      {
+        id: 9,
+        path: "guruh/malumotlar",
+        element: <GroupsInfo/>,
       },
     ],
   },
