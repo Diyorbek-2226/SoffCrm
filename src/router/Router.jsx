@@ -15,6 +15,8 @@ const Schedule = lazy(() => import("../pages/timetable/Timetable"));
 const StudentCard = lazy(() => import("../Components/StudentCard/Attendance"));
 const StudentList = lazy(() => import("../Components/StudentCard/StudentList"));
 const ActiveStudent = lazy(() => import("../Components/StudentCard/ActiveStudent"));
+const ArchivedList =lazy(()=> import("../Components/StudentCard/ArchivedList"));
+const ParentList =lazy(()=> import("../Components/StudentCard/ParentList"));
 const routes = [
   {
     id: 1,
@@ -90,6 +92,16 @@ const routes = [
         id: 15,
         path: "aktiv",
         element: <ActiveStudent/>,
+      },
+      {
+        id: 16,
+        path: "arxiv",
+        element: <ArchivedList/>,
+      },
+      {
+        id: 17,
+        path: "ota-ona",
+        element: <ParentList/>,
       },
     ],
   },
