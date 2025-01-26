@@ -1,6 +1,6 @@
 import { CalendarDays, ChevronDown, Download, History, Pencil } from "lucide-react";
 
-const students = [
+const ArchivedList = [
   {
     id: 1,
     name: "Javlon Javliyev",
@@ -30,7 +30,7 @@ const students = [
   },
 ];
 
-export default function StudentsTable() {
+export default function ArchivedListComponent() {
   return (
     <div className="min-h-screen bg-white">
       {/* Header */}
@@ -51,7 +51,7 @@ export default function StudentsTable() {
       {/* Filters */}
       <div className="max-w-[1400px] mx-auto px-6 -mt-10">
         <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-4 py-6">
-          {[
+          {[ 
             { label: "Sana", icon: <CalendarDays className="w-5 h-5" />, value: "01-11-22" },
             { label: "Kun", value: "Hammasi" },
             { label: "Darajasi", value: "Hammasi" },
@@ -91,12 +91,10 @@ export default function StudentsTable() {
               </tr>
             </thead>
             <tbody>
-              {students.map((student, idx) => (
+              {ArchivedList.map((student, idx) => (
                 <tr
                   key={student.id}
-                  className={`hover:bg-gray-50 ${
-                    idx < students.length - 1 ? "border-b border-gray-200" : ""
-                  }`}
+                  className={`hover:bg-gray-50 ${idx < ArchivedList.length - 1 ? "border-b border-gray-200" : ""}`}
                 >
                   <td className="p-4">
                     <input type="checkbox" className="rounded border-gray-300" />

@@ -17,6 +17,9 @@ const StudentList = lazy(() => import("../Components/StudentCard/StudentList"));
 const ActiveStudent = lazy(() => import("../Components/StudentCard/ActiveStudent"));
 const ArchivedList =lazy(()=> import("../Components/StudentCard/ArchivedList"));
 const ParentList =lazy(()=> import("../Components/StudentCard/ParentList"));
+const OrderList =lazy(()=> import("../Components/OrderDetails/OrderList"));
+const FirstLesson =lazy(()=> import("../Components/OrderDetails/FirstLesson"));
+const NewStudents=lazy(()=> import("../Components/OrderDetails/NewStudents"));
 const routes = [
   {
     id: 1,
@@ -102,6 +105,21 @@ const routes = [
         id: 17,
         path: "ota-ona",
         element: <ParentList/>,
+      },
+      {
+        id: 18,
+        path: "buyurtma",
+        element: <OrderList/>,
+      },
+      {
+        id: 19,
+        path: "birinchi/darsga",
+        element: <FirstLesson/>,
+      },
+      {
+        id: 19,
+        path: "Yangi/talabalar",
+        element: <NewStudents/>,
       },
     ],
   },

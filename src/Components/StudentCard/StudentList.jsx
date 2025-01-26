@@ -1,6 +1,6 @@
 import { CalendarDays, ChevronDown, Download, History, Pencil, Plus } from "lucide-react";
 
-const students = [
+const StudentList = [
   {
     id: 1,
     name: "Javlon Javliyev",
@@ -30,7 +30,7 @@ const students = [
   },
 ];
 
-export default function StudentsTable() {
+export default function StudentList() {
   return (
     <div className="min-h-screen bg-white">
       {/* Header */}

@@ -1,50 +1,43 @@
 import { ChevronDown, Download, Edit, Plus } from "lucide-react";
 
-const order = [
+const lesson = [
   {
     id: 1,
     name: "Javlon Javliyev",
-    status: "Accepted",
-    course: "Mobile",
-    schedule: "Se-Pa-Sha / 10:00-12:00",
+    phone: "+998 90 123 45 67",
     date: "11-11-22",
+    course: "Mobile",
     moderator: "Doniyor Abdullayev",
   },
   {
     id: 2,
     name: "Javlon Javliyev",
-    status: null,
-    course: "Frontend",
-    schedule: "Se-Pa-Sha / 10:00-12:00",
+    phone: "+998 90 123 45 68",
     date: "11-11-22",
+    course: "Frontend",
     moderator: "Doniyor Abdullayev",
   },
   {
     id: 3,
     name: "Akobir To'rayev",
-    status: "Rejected",
-    course: "Backend",
-    schedule: "Se-Pa-Sha / 10:00-12:00",
+    phone: "+998 90 123 45 69",
     date: "11-11-22",
+    course: "Backend",
     moderator: "Doniyor Abdullayev",
   },
 ];
 
-export default function order() {
+export default function FirstLesson() {
   return (
     <div className="bg-white min-h-screen">
       <div className="bg-[rgba(240,245,255,1)]">
         <div className="max-w-[1400px] mx-auto p-6">
           <div className="flex justify-between items-center mb-6">
-            <h1 className="text-2xl font-semibold text-gray-900">Buyurtmalar ro'yxati</h1>
+            <h1 className="text-2xl font-semibold text-gray-900">Birinchi darsga yozilganlar</h1>
             <div className="flex gap-3">
               <button className="flex items-center gap-2 h-11 px-4 text-gray-700 border border-gray-300 rounded-lg hover:bg-gray-50">
                 <Download className="w-5 h-5" />
                 Import
-              </button>
-              <button className="flex items-center gap-2 h-11 px-4 bg-blue-600 hover:bg-blue-700 text-white rounded-lg">
-                <Plus className="w-5 h-5" />
-                Buyurtma qo'shish
               </button>
             </div>
           </div>
@@ -74,15 +67,15 @@ export default function order() {
                   <input type="checkbox" className="rounded border-gray-300" />
                 </th>
                 <th className="p-4 text-left text-sm font-medium text-gray-500">O'quvchining ismi</th>
-                <th className="p-4 text-left text-sm font-medium text-gray-500">Guruh / Fan</th>
-                <th className="p-4 text-left text-sm font-medium text-gray-500">Dars kuni va vaqti</th>
+                <th className="p-4 text-left text-sm font-medium text-gray-500">Telefon raqam</th>
                 <th className="p-4 text-left text-sm font-medium text-gray-500">Qo'shilgan sana</th>
+                <th className="p-4 text-left text-sm font-medium text-gray-500">Kurs</th>
                 <th className="p-4 text-left text-sm font-medium text-gray-500">Moderator</th>
                 <th className="w-20 p-4"></th>
               </tr>
             </thead>
             <tbody>
-              {applications.map((app) => (
+              {lesson.map((app) => (
                 <tr key={app.id} className="hover:bg-gray-50 border-b border-gray-200">
                   <td className="p-4">
                     <input type="checkbox" className="rounded border-gray-300" />
@@ -90,18 +83,11 @@ export default function order() {
                   <td className="p-4">
                     <div className="flex items-center gap-2">
                       <span className="text-sm text-gray-900">{app.name}</span>
-                      {app.status && (
-                        <span
-                          className={`px-2.5 py-0.5 text-xs font-medium rounded-full ${app.status === "Accepted" ? "bg-green-100 text-green-800" : "bg-red-100 text-red-800"}`}
-                        >
-                          {app.status}
-                        </span>
-                      )}
                     </div>
                   </td>
-                  <td className="p-4 text-sm text-gray-500">{app.course}</td>
-                  <td className="p-4 text-sm text-gray-500">{app.schedule}</td>
+                  <td className="p-4 text-sm text-gray-500">{app.phone}</td>
                   <td className="p-4 text-sm text-gray-500">{app.date}</td>
+                  <td className="p-4 text-sm text-gray-500">{app.course}</td>
                   <td className="p-4 text-sm text-gray-500">{app.moderator}</td>
                   <td className="p-4">
                     <div className="flex items-center justify-end gap-2">

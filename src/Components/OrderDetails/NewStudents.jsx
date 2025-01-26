@@ -1,50 +1,49 @@
-import { ChevronDown, Download, Edit, Plus } from "lucide-react";
+import { ChevronDown, Download, Edit, Trash2 } from "lucide-react";
 
-const order = [
+const students = [
   {
     id: 1,
     name: "Javlon Javliyev",
-    status: "Accepted",
+    phone: "+998 90 123 45 67",
     course: "Mobile",
-    schedule: "Se-Pa-Sha / 10:00-12:00",
-    date: "11-11-22",
-    moderator: "Doniyor Abdullayev",
+    teacher: "Doniyor Abdullayev",
+    balans: "$500",
   },
   {
     id: 2,
     name: "Javlon Javliyev",
-    status: null,
+    phone: "+998 90 123 45 68",
     course: "Frontend",
-    schedule: "Se-Pa-Sha / 10:00-12:00",
-    date: "11-11-22",
-    moderator: "Doniyor Abdullayev",
+    teacher: "Doniyor Abdullayev",
+    balans: "$350",
   },
   {
     id: 3,
     name: "Akobir To'rayev",
-    status: "Rejected",
+    phone: "+998 90 123 45 69",
     course: "Backend",
-    schedule: "Se-Pa-Sha / 10:00-12:00",
-    date: "11-11-22",
-    moderator: "Doniyor Abdullayev",
+    teacher: "Doniyor Abdullayev",
+    balans: "$450",
   },
 ];
 
-export default function order() {
+export default function NewStudents() {
   return (
     <div className="bg-white min-h-screen">
       <div className="bg-[rgba(240,245,255,1)]">
         <div className="max-w-[1400px] mx-auto p-6">
           <div className="flex justify-between items-center mb-6">
-            <h1 className="text-2xl font-semibold text-gray-900">Buyurtmalar ro'yxati</h1>
+            <h1 className="text-2xl font-semibold text-gray-900">Yangi talabalar ro’yxati</h1>
             <div className="flex gap-3">
+              {/* Import Button */}
               <button className="flex items-center gap-2 h-11 px-4 text-gray-700 border border-gray-300 rounded-lg hover:bg-gray-50">
                 <Download className="w-5 h-5" />
                 Import
               </button>
-              <button className="flex items-center gap-2 h-11 px-4 bg-blue-600 hover:bg-blue-700 text-white rounded-lg">
-                <Plus className="w-5 h-5" />
-                Buyurtma qo'shish
+
+              {/* Talaba qo'shish Button */}
+              <button className="flex items-center gap-2 h-11 px-4 text-white bg-blue-600 hover:bg-blue-700 rounded-lg">
+               + Talaba qo’shish
               </button>
             </div>
           </div>
@@ -52,13 +51,13 @@ export default function order() {
       </div>
 
       <div className="max-w-[1400px] mx-auto px-6 -mt-6">
-        <div className="grid grid-cols-6 gap-4 mb-6">
-          {["Statusi", "Ranglar bo'yicha", "Guruh", "Kurslar", "Moderator", "Sababi"].map((filter) => (
+        <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-6 gap-4 mb-6">
+          {["Status", "By Colors", "Group", "Courses", "Teacher"].map((filter) => (
             <div key={filter} className="relative">
               <button className="w-full h-11 px-4 text-left border border-gray-300 rounded-lg flex items-center justify-between hover:bg-gray-50">
                 <span className="text-gray-700 text-sm font-medium">{filter}</span>
                 <span className="text-gray-500 flex items-center gap-2">
-                  Hammasi
+                  All
                   <ChevronDown className="w-5 h-5" />
                 </span>
               </button>
@@ -73,43 +72,36 @@ export default function order() {
                 <th className="w-12 p-4">
                   <input type="checkbox" className="rounded border-gray-300" />
                 </th>
-                <th className="p-4 text-left text-sm font-medium text-gray-500">O'quvchining ismi</th>
-                <th className="p-4 text-left text-sm font-medium text-gray-500">Guruh / Fan</th>
-                <th className="p-4 text-left text-sm font-medium text-gray-500">Dars kuni va vaqti</th>
-                <th className="p-4 text-left text-sm font-medium text-gray-500">Qo'shilgan sana</th>
-                <th className="p-4 text-left text-sm font-medium text-gray-500">Moderator</th>
+                <th className="p-4 text-left text-sm font-medium text-gray-500">O'quvchini ismi</th>
+                <th className="p-4 text-left text-sm font-medium text-gray-500">Telefon raqam</th>
+                <th className="p-4 text-left text-sm font-medium text-gray-500">Balans</th>
+                <th className="p-4 text-left text-sm font-medium text-gray-500">Kurs</th>
+                <th className="p-4 text-left text-sm font-medium text-gray-500">O'qituvchi</th>
                 <th className="w-20 p-4"></th>
               </tr>
             </thead>
             <tbody>
-              {applications.map((app) => (
-                <tr key={app.id} className="hover:bg-gray-50 border-b border-gray-200">
+              {students.map((student) => (
+                <tr key={student.id} className="hover:bg-gray-50 border-b border-gray-200">
                   <td className="p-4">
                     <input type="checkbox" className="rounded border-gray-300" />
                   </td>
                   <td className="p-4">
                     <div className="flex items-center gap-2">
-                      <span className="text-sm text-gray-900">{app.name}</span>
-                      {app.status && (
-                        <span
-                          className={`px-2.5 py-0.5 text-xs font-medium rounded-full ${app.status === "Accepted" ? "bg-green-100 text-green-800" : "bg-red-100 text-red-800"}`}
-                        >
-                          {app.status}
-                        </span>
-                      )}
+                      <span className="text-sm text-gray-900">{student.name}</span>
                     </div>
                   </td>
-                  <td className="p-4 text-sm text-gray-500">{app.course}</td>
-                  <td className="p-4 text-sm text-gray-500">{app.schedule}</td>
-                  <td className="p-4 text-sm text-gray-500">{app.date}</td>
-                  <td className="p-4 text-sm text-gray-500">{app.moderator}</td>
+                  <td className="p-4 text-sm text-gray-500">{student.phone}</td>
+                  <td className="p-4 text-sm text-gray-500">{student.balans}</td>
+                  <td className="p-4 text-sm text-gray-500">{student.course}</td>
+                  <td className="p-4 text-sm text-gray-500">{student.teacher}</td>
                   <td className="p-4">
                     <div className="flex items-center justify-end gap-2">
                       <button className="p-1 hover:bg-gray-100 rounded-lg">
                         <Edit className="w-5 h-5 text-gray-400" />
                       </button>
                       <button className="p-1 hover:bg-gray-100 rounded-lg">
-                        <ChevronDown className="w-5 h-5 text-gray-400" />
+                        <Trash2 className="w-5 h-5 text-gray-400" />
                       </button>
                     </div>
                   </td>
