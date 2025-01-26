@@ -11,6 +11,7 @@ const RaqamniBelgilash = lazy(() => import("../pages/setings/umumiy/RaqamniBelgi
 const Groups = lazy(() => import("../pages/groups/Groups"));
 const GroupsInfo = lazy(() => import("../pages/groups/GroupsInfo"));
 const RoomSelection = lazy(() => import("../pages/rooms/RoomDetails"));
+const Schedule = lazy(() => import("../pages/timetable/Timetable"));
 const routes = [
   {
     id: 1,
@@ -66,6 +67,11 @@ const routes = [
         id: 11,
         path: "xonalar",
         element: <RoomSelection/>,
+      },
+      {
+        id: 12,
+        path: "dars",
+        element: <Schedule/>,
       },
     ],
   },
