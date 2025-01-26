@@ -14,6 +14,7 @@ const RoomSelection = lazy(() => import("../pages/rooms/RoomDetails"));
 const Schedule = lazy(() => import("../pages/timetable/Timetable"));
 const StudentCard = lazy(() => import("../Components/StudentCard/Attendance"));
 const StudentList = lazy(() => import("../Components/StudentCard/StudentList"));
+const ActiveStudent = lazy(() => import("../Components/StudentCard/ActiveStudent"));
 const routes = [
   {
     id: 1,
@@ -84,6 +85,11 @@ const routes = [
         id: 14,
         path: "jadval",
         element: <StudentList/>,
+      },
+      {
+        id: 15,
+        path: "aktiv",
+        element: <ActiveStudent/>,
       },
     ],
   },
