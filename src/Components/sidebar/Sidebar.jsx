@@ -31,10 +31,10 @@ const menuItems = [
     label: "Sozlamalar",
     path: "#",
     subItems: [
-      { label: "Umumiy Sozlamalar", path: "sozlamalar" },
-      { label: "Manager", path: "#" },
+      { label: "Umumiy Sozlamalar", path: "/sozlamalar" },
+      { label: "Manager", path: "/manager" },
       { label: "O'qituvchi", path: "#" },
-      { label: "Talaba", path: "#" },
+      { label: "Talaba", path: "/talabalar" },
     ],
   },
 ];

@@ -1,7 +1,7 @@
 import React from 'react'
 import Layout from './Layout'
 
-function Manager() {
+function Talaba() {
   return (
     <Layout>
       
@@ -9,4 +9,4 @@ function Manager() {
   )
 }
 
-export default Manager
+export default Talaba

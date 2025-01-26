@@ -1,12 +1,12 @@
 import React from 'react'
 import Layout from './Layout'
 
-function Manager() {
+function Tulov() {
   return (
     <Layout>
-      
+        
     </Layout>
   )
 }
 
-export default Manager
+export default Tulov

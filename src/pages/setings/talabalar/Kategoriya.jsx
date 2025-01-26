@@ -1,12 +1,12 @@
 import React from 'react'
 import Layout from './Layout'
 
-function Manager() {
+function Kategoriya() {
   return (
     <Layout>
-      
+        
     </Layout>
   )
 }
 
-export default Manager
+export default Kategoriya
