@@ -12,6 +12,7 @@ const Groups = lazy(() => import("../pages/groups/Groups"));
 const GroupsInfo = lazy(() => import("../pages/groups/GroupsInfo"));
 const RoomSelection = lazy(() => import("../pages/rooms/RoomDetails"));
 const Schedule = lazy(() => import("../pages/timetable/Timetable"));
+const StudentCard = lazy(() => import("../Components/StudentCard/Attendance"));
 const routes = [
   {
     id: 1,
@@ -72,6 +73,11 @@ const routes = [
         id: 12,
         path: "dars",
         element: <Schedule/>,
+      },
+      {
+        id: 13,
+        path: "davomat",
+        element: <StudentCard/>,
       },
     ],
   },

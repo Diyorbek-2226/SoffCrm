@@ -1,8 +1,6 @@
 import React from "react";
 import ideicon from '../../assets/icons/edit.svg';
 import deleicon from "../../assets/icons/delet.svg";
-
-// Button komponentasi
 const Button = ({ children, onClick, className, variant = "primary" }) => {
   const baseStyle = "py-2 px-4 rounded font-semibold transition-all duration-300 text-base";
   
