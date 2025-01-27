@@ -33,7 +33,7 @@ const menuItems = [
     subItems: [
       { label: "Umumiy Sozlamalar", path: "/sozlamalar" },
       { label: "Manager", path: "/manager" },
-      { label: "O'qituvchi", path: "#" },
+      { label: "O'qituvchi", path: "/teacher" },
       { label: "Talaba", path: "/talabalar" },
     ],
   },

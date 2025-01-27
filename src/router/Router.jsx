@@ -30,6 +30,9 @@ const Cours = lazy(() => import("../Components/Cours/cours"));
 const CoursTable = lazy(() => import("../Components/Cours/CoursTable"));
 const RolesTable = lazy(() => import("../Components/Rols/RolesTable"));
 const EmployeesTable = lazy(() => import("../Components/Rols/EmployeesTable"));
+const Teacher = lazy(() => import("../pages/setings/teacher/Teacher"));
+const Kpi = lazy(() => import("../pages/setings/teacher/Kpi"));
+const Oylik = lazy(() => import("../pages/setings/teacher/Oylik"));
 const routes = [
   {
     id: 1,
@@ -181,6 +184,21 @@ const routes = [
         path: "hodimlar",
         element: <EmployeesTable/>
       },
+      {
+        id: 31,
+        path: "teacher",
+        element: <Teacher/>
+      },
+      {
+        id: 32,
+        path: "teacher/kpi",
+        element: <Kpi/>
+      },
+      {
+        id: 33,
+        path: "teacher/oylik",
+        element: <Oylik/>
+      }
     ],
   },
 ];

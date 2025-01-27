@@ -11,8 +11,8 @@ function TopBar() {
 
   const getLabel = () => {
     const labels = {
-      tulovlar: "To'lovlar",
-      kategoriya: "Kategoriya",
+      kpi: "KPI",
+      oylik: "Oylik",
     };
     return labels[pathName] || "";
   };
@@ -25,10 +25,10 @@ function TopBar() {
         <div className="flex justify-between items-center w-full">
           <div className="flex items-center gap-2">
             <span
-              onClick={() => navigate("/talabalar")}
+              onClick={() => navigate("/teacher")}
               className="font-semibold text-xl cursor-pointer"
             >
-              Talabalar
+              O'qituvchi
             </span>
             {getLabel() && (
               <span className="text-gray-400 mx-2">
@@ -37,14 +37,9 @@ function TopBar() {
             )}
             <span className="text-xl font-thin">{getLabel()}</span>
           </div>
-          {currentLabel === "To'lovlar" && (
+          {currentLabel === "Oylik" && (
             <button className="bg-[#FA8C16] flex items-center gap-2 text-sm text-white pl-2 pr-4 py-2 rounded-lg">
-              <Plus size={18} /> Bonus qo'shish
-            </button>
-          )}
-          {currentLabel === "Kategoriya" && (
-            <button className="bg-[#FA8C16] flex items-center gap-2 text-sm text-white pl-2 pr-4 py-2 rounded-lg">
-              <Plus size={18} /> Kategoriya qo'shish
+              <Plus size={18} /> Foiz qo'shish
             </button>
           )}
         </div>

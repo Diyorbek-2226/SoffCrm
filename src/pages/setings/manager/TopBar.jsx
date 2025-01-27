@@ -39,7 +39,7 @@ function TopBar() {
           </div>
           {currentLabel === "Darajalar" && (
             <button className="bg-[#FA8C16] flex items-center gap-2 text-sm text-white pl-2 pr-4 py-2 rounded-lg">
-              <Plus size={18} /> Filiallar qo'shish
+              <Plus size={18} /> Manager qo'shish
             </button>
           )}
         </div>
