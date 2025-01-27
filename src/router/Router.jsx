@@ -26,6 +26,8 @@ const Darajalar = lazy(() => import("../pages/setings/manager/Darajalar"));
 const Talaba = lazy(() => import("../pages/setings/talabalar/Talaba"));
 const Tulov = lazy(() => import("../pages/setings/talabalar/Tulov"));
 const Kategoriya = lazy(() => import("../pages/setings/talabalar/Kategoriya"));
+const Cours = lazy(() => import("../Components/Cours/cours"));
+const CoursTable = lazy(() => import("../Components/Cours/CoursTable"));
 const routes = [
   {
     id: 1,
@@ -123,39 +125,49 @@ const routes = [
         element: <FirstLesson/>,
       },
       {
-        id: 19,
+        id: 20,
         path: "Yangi/talabalar",
         element: <NewStudents/>,
       },
       {
-        id: 20,
+        id: 21,
         path: "manager",
         element: <Manager />,
       },
       {
-        id: 21,
+        id: 22,
         path: "manager/tulovlar",
         element: <Tulovlar />
       },
       {
-        id: 22,
+        id: 23,
         path: "manager/darajalar",
         element: <Darajalar />
       },
       {
-        id: 23,
+        id: 24,
         path: "talabalar",
         element: <Talaba />
       },
       {
-        id: 24,
+        id: 25,
         path: "talabalar/tulovlar",
         element: <Tulov />
       },
       {
-        id: 25,
+        id: 26,
         path: "talabalar/kategoriya",
         element: <Kategoriya />
+      },
+      {
+        id: 27,
+        path: "kurs",
+        element: <Cours/>
+      },
+      {
+        id: 28,
+        path: "kurs/ro'yxati",
+        element: <CoursTable/>
       },
     ],
   },
