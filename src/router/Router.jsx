@@ -28,6 +28,8 @@ const Tulov = lazy(() => import("../pages/setings/talabalar/Tulov"));
 const Kategoriya = lazy(() => import("../pages/setings/talabalar/Kategoriya"));
 const Cours = lazy(() => import("../Components/Cours/cours"));
 const CoursTable = lazy(() => import("../Components/Cours/CoursTable"));
+const RolesTable = lazy(() => import("../Components/Rols/RolesTable"));
+const EmployeesTable = lazy(() => import("../Components/Rols/EmployeesTable"));
 const routes = [
   {
     id: 1,
@@ -168,6 +170,16 @@ const routes = [
         id: 28,
         path: "kurs/ro'yxati",
         element: <CoursTable/>
+      },
+      {
+        id: 29,
+        path: "ro'llar",
+        element: <RolesTable/>
+      },
+      {
+        id: 30,
+        path: "hodimlar",
+        element: <EmployeesTable/>
       },
     ],
   },
