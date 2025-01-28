@@ -8,12 +8,12 @@ function Oylik() {
   ];
   return (
     <Layout>
-      <div className="p-6">
+      <div className="p-0 md:p-6">
         <table className="w-full text-left">
           <thead>
             <tr className="text-gray-400">
               <th className="py-2">Qo'shimcha foiz turi</th>
-              <th className="py-2 text-end">
+              <th className="py-2 text-end min-w-28">
                 Foiz miqdori
               </th>
             </tr>

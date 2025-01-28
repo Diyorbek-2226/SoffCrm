@@ -13,13 +13,14 @@ function Kpi() {
   ];
   return (
     <Layout>
-      <div className="p-6">
+      <div className="p-0 md:p-6">
         <table className="w-full text-left">
           <thead>
             <tr className="text-gray-400">
               <th className="py-2">To'lov turi</th>
-              <th className="py-2 text-end">
-                Bonusni o'chirish
+              <th className="py-2 text-end min-w-24">
+              Bonus
+                <span className="hidden md:inline">ni o‘chirish</span>
                 <input
                   type="checkbox"
                   className="w-5 h-5 top-1 ml-2 relative"
@@ -36,12 +37,13 @@ function Kpi() {
             ))}
           </tbody>
         </table>
-        <table className="w-full text-left mt-8">
+        <table className="w-full text-left mt-6 md:mt-8">
           <thead>
             <tr className="text-gray-400">
               <th className="py-2">Jarima turi</th>
-              <th className="py-2 text-end">
-                Bonusni o'chirish
+              <th className="py-2 text-end min-w-24">
+              Bonus
+              <span className="hidden md:inline">ni o‘chirish</span>
                 <input
                   type="checkbox"
                   className="w-5 h-5 top-1 ml-2 relative"

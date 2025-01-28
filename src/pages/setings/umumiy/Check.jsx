@@ -5,7 +5,7 @@ import Layout from "./Layout";
 function Check() {
   return (
     <Layout>
-      <form className="space-y-6 w-full bg-white p-6 shadow-sm">
+      <form className="space-y-6 w-full bg-white p-0 md:p-6 shadow-sm">
         {/* Logo Upload */}
         <div className="space-y-2">
           <label className="block text-sm font-medium text-gray-700">
@@ -37,17 +37,6 @@ function Check() {
         <div className="space-y-2">
           <label className="block text-sm font-medium text-gray-700">
             Chek tag yozuvi
-          </label>
-          <input
-            type="text"
-            className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-          />
-        </div>
-
-        {/* Footer */}
-        <div className="space-y-2">
-          <label className="block text-sm font-medium text-gray-700">
-            Footer
           </label>
           <input
             type="text"

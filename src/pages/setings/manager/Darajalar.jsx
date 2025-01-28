@@ -10,12 +10,12 @@ function Darajalar() {
 
   return (
     <Layout>
-      <div className="p-6">
+      <div className="p-0 md:p-6">
         <table className="w-full text-left">
           <thead>
             <tr className="text-gray-400">
               <th className="py-2">Lavozim</th>
-              <th className="py-2">Yarim stavka</th>
+              <th className="py-2 hidden md:block">Yarim stavka</th>
               <th className="py-2 text-end">Bir stavka</th>
             </tr>
           </thead>
@@ -23,7 +23,7 @@ function Darajalar() {
             {notifications.map((notification, index) => (
               <tr key={index} className="border-b border-gray-300">
                 <td className="py-4">{notification.type}</td>
-                <td className="py-4">{notification.time}</td>
+                <td className="py-4 hidden md:block">{notification.time}</td>
                 <td className="py-4 text-end">{notification.price}</td>
               </tr>
             ))}

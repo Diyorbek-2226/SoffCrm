@@ -25,7 +25,7 @@ function Kategoriya() {
   ];
   return (
     <Layout>
-      <div className="p-6">
+      <div className="p-0 md:p-6">
         <table className="w-full text-left">
           <thead>
             <tr className="text-gray-400">
