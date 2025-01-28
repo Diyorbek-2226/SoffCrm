@@ -35,7 +35,7 @@ export default function ArchivedListComponent() {
     <div className="min-h-screen bg-white">
       {/* Header */}
       <div className="bg-[#F9F5FF] mt-[-5px]">
-        <div className="max-w-[1400px] mx-auto p-6">
+        <div className="max-w-screen-xl mx-auto p-6">
           <div className="flex flex-wrap justify-between items-center mb-4">
             <h1 className="text-2xl font-semibold text-[#1F2937]">Arxiv</h1>
             <div className="flex gap-3 mt-4 sm:mt-0">
@@ -49,8 +49,8 @@ export default function ArchivedListComponent() {
       </div>
 
       {/* Filters */}
-      <div className="max-w-[1400px] mx-auto px-6 -mt-10">
-        <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-4 py-6">
+      <div className="max-w-screen-xl mx-auto px-6 -mt-10">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-4 py-6">
           {[ 
             { label: "Sana", icon: <CalendarDays className="w-5 h-5" />, value: "01-11-22" },
             { label: "Kun", value: "Hammasi" },
@@ -74,58 +74,89 @@ export default function ArchivedListComponent() {
       </div>
 
       {/* Table */}
-      <div className="max-w-[1400px] mx-auto px-6 -mt-2">
+      <div className="max-w-screen-xl mx-auto px-6 -mt-2">
         <div className="overflow-x-auto bg-white">
-          <table className="w-full min-w-[800px] border-collapse border-spacing-0">
-            <thead>
-              <tr className="border-b border-gray-200">
-                <th className="w-12 p-4">
-                  <input type="checkbox" className="rounded border-gray-300" />
-                </th>
-                <th className="p-4 text-left text-sm font-medium text-gray-500">O'quvchining ismi</th>
-                <th className="p-4 text-left text-sm font-medium text-gray-500">Telefon raqam</th>
-                <th className="p-4 text-left text-sm font-medium text-gray-500">Balans</th>
-                <th className="p-4 text-left text-sm font-medium text-gray-500">Qo'shilgan sana</th>
-                <th className="p-4 text-left text-sm font-medium text-gray-500">Moderator</th>
-                <th className="w-24 p-4"></th>
-              </tr>
-            </thead>
-            <tbody>
-              {ArchivedList.map((student, idx) => (
-                <tr
-                  key={student.id}
-                  className={`hover:bg-gray-50 ${idx < ArchivedList.length - 1 ? "border-b border-gray-200" : ""}`}
-                >
-                  <td className="p-4">
+          {/* Large screen: Table layout */}
+          <div className="hidden lg:block">
+            <table className="w-full min-w-[1000px] border-collapse border-spacing-0">
+              <thead>
+                <tr className="border-b border-gray-200">
+                  <th className="w-12 p-4">
                     <input type="checkbox" className="rounded border-gray-300" />
-                  </td>
-                  <td className="p-4 text-sm text-gray-900">{student.name}</td>
-                  <td className="p-4">
-                    <span
-                      className={`text-sm ${
-                        student.phoneStatus === "success" ? "text-green-600" : "text-red-600"
-                      }`}
-                    >
-                      {student.phone}
-                    </span>
-                  </td>
-                  <td className="p-4 text-sm text-gray-900">{student.balance.toLocaleString()}</td>
-                  <td className="p-4 text-sm text-gray-500">{student.date}</td>
-                  <td className="p-4 text-sm text-gray-500">{student.moderator}</td>
-                  <td className="p-4">
-                    <div className="flex items-center justify-end gap-2">
-                      <button className="p-2 hover:bg-gray-100 rounded-lg">
-                        <History className="w-5 h-5 text-gray-400" />
-                      </button>
-                      <button className="p-2 hover:bg-gray-100 rounded-lg">
-                        <Pencil className="w-5 h-5 text-gray-400" />
-                      </button>
-                    </div>
-                  </td>
+                  </th>
+                  <th className="p-4 text-left text-sm font-medium text-gray-500">O'quvchining ismi</th>
+                  <th className="p-4 text-left text-sm font-medium text-gray-500">Telefon raqam</th>
+                  <th className="p-4 text-left text-sm font-medium text-gray-500">Balans</th>
+                  <th className="p-4 text-left text-sm font-medium text-gray-500">Qo'shilgan sana</th>
+                  <th className="p-4 text-left text-sm font-medium text-gray-500">Moderator</th>
+                  <th className="w-24 p-4"></th>
                 </tr>
+              </thead>
+              <tbody>
+                {ArchivedList.map((student, idx) => (
+                  <tr
+                    key={student.id}
+                    className={`hover:bg-gray-50 ${idx < ArchivedList.length - 1 ? "border-b border-gray-200" : ""}`}
+                  >
+                    <td className="p-4">
+                      <input type="checkbox" className="rounded border-gray-300" />
+                    </td>
+                    <td className="p-4 text-sm text-gray-900">{student.name}</td>
+                    <td className="p-4">
+                      <span
+                        className={`text-sm ${student.phoneStatus === "success" ? "text-green-600" : "text-red-600"}`}
+                      >
+                        {student.phone}
+                      </span>
+                    </td>
+                    <td className="p-4 text-sm text-gray-900">{student.balance.toLocaleString()}</td>
+                    <td className="p-4 text-sm text-gray-500">{student.date}</td>
+                    <td className="p-4 text-sm text-gray-500">{student.moderator}</td>
+                    <td className="p-4">
+                      <div className="flex items-center justify-end gap-2">
+                        <button className="p-2 hover:bg-gray-100 rounded-lg">
+                          <History className="w-5 h-5 text-gray-400" />
+                        </button>
+                        <button className="p-2 hover:bg-gray-100 rounded-lg">
+                          <Pencil className="w-5 h-5 text-gray-400" />
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+
+          {/* Mobile view: Card layout */}
+          <div className="lg:hidden">
+            <div className="grid grid-cols-1 gap-4">
+              {ArchivedList.map((student) => (
+                <div
+                  key={student.id}
+                  className="border p-4 rounded-lg shadow-sm hover:shadow-lg"
+                >
+                  <h3 className="text-lg font-semibold">{student.name}</h3>
+                  <div className="flex justify-between text-sm text-gray-600 mt-2">
+                    <span>{student.phone}</span>
+                    <span>{student.balance.toLocaleString()}</span>
+                  </div>
+                  <div className="flex justify-between text-xs text-gray-500 mt-1">
+                    <span>{student.date}</span>
+                    <span>{student.moderator}</span>
+                  </div>
+                  <div className="flex justify-end gap-2 mt-3">
+                    <button className="p-2 hover:bg-gray-100 rounded-lg">
+                      <History className="w-5 h-5 text-gray-400" />
+                    </button>
+                    <button className="p-2 hover:bg-gray-100 rounded-lg">
+                      <Pencil className="w-5 h-5 text-gray-400" />
+                    </button>
+                  </div>
+                </div>
               ))}
-            </tbody>
-          </table>
+            </div>
+          </div>
         </div>
       </div>
     </div>

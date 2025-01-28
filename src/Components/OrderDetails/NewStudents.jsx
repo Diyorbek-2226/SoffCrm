@@ -31,7 +31,7 @@ export default function NewStudents() {
   return (
     <div className="bg-white min-h-screen">
       <div className="bg-[rgba(240,245,255,1)]">
-        <div className="max-w-[1400px] mx-auto p-6">
+        <div className="max-w-full sm:max-w-[1400px] mx-auto p-6">
           <div className="flex justify-between items-center mb-6">
             <h1 className="text-2xl font-semibold text-gray-900">Yangi talabalar ro’yxati</h1>
             <div className="flex gap-3">
@@ -50,7 +50,8 @@ export default function NewStudents() {
         </div>
       </div>
 
-      <div className="max-w-[1400px] mx-auto px-6 -mt-6">
+      <div className="max-w-full sm:max-w-[1400px] mx-auto px-6 -mt-6">
+        {/* Filters */}
         <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-6 gap-4 mb-6">
           {["Status", "By Colors", "Group", "Courses", "Teacher"].map((filter) => (
             <div key={filter} className="relative">
@@ -65,7 +66,8 @@ export default function NewStudents() {
           ))}
         </div>
 
-        <div className="overflow-x-auto">
+        {/* Table for larger screens */}
+        <div className="hidden lg:block overflow-x-auto">
           <table className="w-full table-auto">
             <thead>
               <tr className="bg-gray-50">
@@ -109,6 +111,27 @@ export default function NewStudents() {
               ))}
             </tbody>
           </table>
+        </div>
+
+        {/* Cards for small screens */}
+        <div className="lg:hidden">
+          {students.map((student) => (
+            <div key={student.id} className="bg-white shadow-md rounded-lg mb-6 p-6 flex flex-col gap-4">
+              <h2 className="text-xl font-semibold text-gray-800">{student.name}</h2>
+              <p className="text-sm text-gray-600">Phone: {student.phone}</p>
+              <p className="text-sm text-gray-600">Balans: {student.balans}</p>
+              <p className="text-sm text-gray-600">Course: {student.course}</p>
+              <p className="text-sm text-gray-600">Teacher: {student.teacher}</p>
+              <div className="flex gap-2 justify-end">
+                <button className="p-2 hover:bg-gray-100 rounded-lg">
+                  <Edit className="w-5 h-5 text-gray-400" />
+                </button>
+                <button className="p-2 hover:bg-gray-100 rounded-lg">
+                  <Trash2 className="w-5 h-5 text-gray-400" />
+                </button>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </div>

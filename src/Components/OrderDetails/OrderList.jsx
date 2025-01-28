@@ -30,13 +30,13 @@ const order = [
   },
 ];
 
-export default function order() {
+export default function Order() {
   return (
     <div className="bg-white min-h-screen">
       <div className="bg-[rgba(240,245,255,1)]">
-        <div className="max-w-[1400px] mx-auto p-6">
-          <div className="flex justify-between items-center mb-6">
-            <h1 className="text-2xl font-semibold text-gray-900">Buyurtmalar ro'yxati</h1>
+        <div className="max-w-[1400px] mx-auto p-4 sm:p-6">
+          <div className="flex flex-wrap justify-between items-center mb-6 gap-4">
+            <h1 className="text-xl sm:text-2xl font-semibold text-gray-900">Buyurtmalar ro'yxati</h1>
             <div className="flex gap-3">
               <button className="flex items-center gap-2 h-11 px-4 text-gray-700 border border-gray-300 rounded-lg hover:bg-gray-50">
                 <Download className="w-5 h-5" />
@@ -51,9 +51,16 @@ export default function order() {
         </div>
       </div>
 
-      <div className="max-w-[1400px] mx-auto px-6 -mt-6">
-        <div className="grid grid-cols-6 gap-4 mb-6">
-          {["Statusi", "Ranglar bo'yicha", "Guruh", "Kurslar", "Moderator", "Sababi"].map((filter) => (
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 -mt-6">
+        <div className="hidden md:grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4 mb-6">
+          {[
+            "Statusi",
+            "Ranglar bo'yicha",
+            "Guruh",
+            "Kurslar",
+            "Moderator",
+            "Sababi",
+          ].map((filter) => (
             <div key={filter} className="relative">
               <button className="w-full h-11 px-4 text-left border border-gray-300 rounded-lg flex items-center justify-between hover:bg-gray-50">
                 <span className="text-gray-700 text-sm font-medium">{filter}</span>
@@ -66,7 +73,8 @@ export default function order() {
           ))}
         </div>
 
-        <div className="overflow-x-auto">
+        {/* Table view for larger screens */}
+        <div className="hidden md:block overflow-x-auto">
           <table className="w-full table-auto">
             <thead>
               <tr className="bg-gray-50">
@@ -82,7 +90,7 @@ export default function order() {
               </tr>
             </thead>
             <tbody>
-              {applications.map((app) => (
+              {order.map((app) => (
                 <tr key={app.id} className="hover:bg-gray-50 border-b border-gray-200">
                   <td className="p-4">
                     <input type="checkbox" className="rounded border-gray-300" />
@@ -92,7 +100,11 @@ export default function order() {
                       <span className="text-sm text-gray-900">{app.name}</span>
                       {app.status && (
                         <span
-                          className={`px-2.5 py-0.5 text-xs font-medium rounded-full ${app.status === "Accepted" ? "bg-green-100 text-green-800" : "bg-red-100 text-red-800"}`}
+                          className={`px-2.5 py-0.5 text-xs font-medium rounded-full ${
+                            app.status === "Accepted"
+                              ? "bg-green-100 text-green-800"
+                              : "bg-red-100 text-red-800"
+                          }`}
                         >
                           {app.status}
                         </span>
@@ -117,6 +129,35 @@ export default function order() {
               ))}
             </tbody>
           </table>
+        </div>
+
+        {/* Card view for smaller screens */}
+        <div className="md:hidden space-y-4">
+          {order.map((app) => (
+            <div
+              key={app.id}
+              className="p-4 border border-gray-300 rounded-lg shadow-sm hover:shadow-md"
+            >
+              <div className="flex justify-between items-center mb-2">
+                <h2 className="text-sm font-medium text-gray-900">{app.name}</h2>
+                {app.status && (
+                  <span
+                    className={`px-2.5 py-0.5 text-xs font-medium rounded-full ${
+                      app.status === "Accepted"
+                        ? "bg-green-100 text-green-800"
+                        : "bg-red-100 text-red-800"
+                    }`}
+                  >
+                    {app.status}
+                  </span>
+                )}
+              </div>
+              <p className="text-sm text-gray-500">{app.course}</p>
+              <p className="text-sm text-gray-500">{app.schedule}</p>
+              <p className="text-sm text-gray-500">{app.date}</p>
+              <p className="text-sm text-gray-500">{app.moderator}</p>
+            </div>
+          ))}
         </div>
       </div>
     </div>

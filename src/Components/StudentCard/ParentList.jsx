@@ -29,7 +29,7 @@ export default function ParentsTable() {
     <div className="min-h-screen bg-white">
       {/* Header */}
       <div className="bg-[#F9F5FF] mt-[-5px]">
-        <div className="max-w-[1400px] mx-auto p-6">
+        <div className="max-w-full sm:max-w-[1400px] mx-auto p-6">
           <div className="flex flex-wrap justify-between items-center mb-4">
             <h1 className="text-2xl font-semibold text-[#1F2937]">Ota-ona</h1>
             <div className="flex gap-3 mt-4 sm:mt-0">
@@ -43,7 +43,7 @@ export default function ParentsTable() {
       </div>
 
       {/* Filters */}
-      <div className="max-w-[1400px] mx-auto px-6 -mt-10">
+      <div className="max-w-full sm:max-w-[1400px] mx-auto px-6 -mt-10">
         <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-4 py-6">
           {[ 
             { label: "Sana", icon: <CalendarDays className="w-5 h-5" />, value: "01-11-22" },
@@ -67,9 +67,10 @@ export default function ParentsTable() {
         </div>
       </div>
 
-      {/* Table */}
-      <div className="max-w-[1400px] mx-auto px-6 -mt-2">
-        <div className="overflow-x-auto bg-white">
+      {/* Table (Full Width on Desktop, Cards on Mobile) */}
+      <div className="max-w-full sm:max-w-[1400px] mx-auto px-6 -mt-2">
+        {/* Large screen table */}
+        <div className="hidden lg:block overflow-x-auto bg-white">
           <table className="w-full min-w-[800px] border-collapse border-spacing-0">
             <thead>
               <tr className="border-b border-gray-200">
@@ -87,9 +88,7 @@ export default function ParentsTable() {
               {parents.map((parent, idx) => (
                 <tr
                   key={parent.id}
-                  className={`hover:bg-gray-50 ${
-                    idx < parents.length - 1 ? "border-b border-gray-200" : ""
-                  }`}
+                  className={`hover:bg-gray-50 ${idx < parents.length - 1 ? "border-b border-gray-200" : ""}`}
                 >
                   <td className="p-4">
                     <input type="checkbox" className="rounded border-gray-300" />
@@ -112,6 +111,29 @@ export default function ParentsTable() {
               ))}
             </tbody>
           </table>
+        </div>
+
+        {/* Small screen cards */}
+        <div className="lg:hidden">
+          {parents.map((parent) => (
+            <div
+              key={parent.id}
+              className="bg-white shadow-md rounded-lg mb-6 p-6 flex flex-col gap-4"
+            >
+              <h2 className="text-xl font-semibold text-gray-800">{parent.studentName}</h2>
+              <p className="text-sm text-gray-600">Father: {parent.fatherName}</p>
+              <p className="text-sm text-gray-600">Mother: {parent.motherName}</p>
+              <p className="text-sm text-gray-600">Balance: {parent.balance.toLocaleString()}</p>
+              <div className="flex gap-2 justify-end">
+                <button className="p-2 hover:bg-gray-100 rounded-lg">
+                  <Pencil className="w-5 h-5 text-gray-400" />
+                </button>
+                <button className="p-2 hover:bg-gray-100 rounded-lg">
+                  <Trash className="w-5 h-5 text-gray-400" />
+                </button>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </div>

@@ -78,8 +78,8 @@ const GroupsInfo = () => {
         </div>
       </div>
 
-      {/* Table */}
-      <div className="bg-white pt-8 mt-12 overflow-x-auto sm:overflow-visible">
+      {/* Table for large screens */}
+      <div className="bg-white pt-8 mt-12 hidden sm:block overflow-x-auto sm:overflow-visible">
         <table className="min-w-full table-auto text-base">
           <thead>
             <tr>
@@ -156,6 +156,35 @@ const GroupsInfo = () => {
             ))}
           </tbody>
         </table>
+      </div>
+
+      {/* Cards for small screens */}
+      <div className="sm:hidden">
+        {students.map((student, studentIndex) => (
+          <div key={studentIndex} className="bg-white p-4 rounded-lg shadow-lg mb-4">
+            <div className="text-lg font-semibold text-gray-700">{student.name}</div>
+            <div className="text-sm text-gray-500">{student.phone}</div>
+            <div className="mt-4">
+              {student.attendance.map((status, dateIndex) => (
+                <div
+                  key={dateIndex}
+                  className="flex justify-between items-center py-2 border-b border-gray-200"
+                >
+                  <span className="text-sm">{dates[dateIndex]}</span>
+                  <div
+                    className="w-6 h-6 flex items-center justify-center rounded-full border-2 border-gray-300 bg-white cursor-pointer hover:border-gray-500 hover:bg-gray-200 shadow-md"
+                    onClick={() => handleAttendanceChange(studentIndex, dateIndex)}
+                  >
+                    {status === "present" && <img src={keldi} alt="" />}
+                    {status === "first" && <img src={birdars} alt="" />}
+                    {status === "absent" && <img src={sababsz} alt="" />}
+                    {status === "excused" && <img src={sababli} alt="" />}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        ))}
       </div>
 
       {/* Modal */}

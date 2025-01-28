@@ -66,51 +66,76 @@ export default function AttendanceTable() {
         ))}
       </div>
 
-      {/* Table */}
+      {/* Table (Full Layout for Desktop, Card Layout for Mobile) */}
       <div className="bg-white rounded-lg border border-[#E5E7EB] overflow-hidden ml-[-10px]">
-        <table className="min-w-full table-auto">
-          {/* Table Header */}
-          <thead>
-            <tr className="bg-[#F9FAFB] border-b border-[#E5E7EB]">
-              <th className="w-[48px] py-3 px-6">
-                <input type="checkbox" className="border border-[#D1D5DB] rounded-[4px] w-[18px] h-[18px]" />
-              </th>
-              <th className="text-[#374151] font-medium py-3 px-6 text-sm">O'quvchining ismi</th>
-              <th className="text-[#374151] font-medium py-3 px-6 text-sm">Telefon raqam</th>
-              <th className="text-[#374151] font-medium py-3 px-6 text-sm">Balans</th>
-              <th className="text-[#374151] font-medium py-3 px-6 text-sm">Guruh</th>
-              <th className="text-[#374151] font-medium py-3 px-6 text-sm">O'qituvchi</th>
-              <th className="text-[#374151] font-medium py-3 px-6 text-sm">Sababi</th>
-              <th className="w-[100px]"></th>
-            </tr>
-          </thead>
-          {/* Table Body */}
-          <tbody>
-            {tableData.map((row, index) => (
-              <tr key={index} className="border-b border-[#E5E7EB] hover:bg-gray-50">
-                <td className="py-4 px-6">
+        {/* Table Layout for Larger Screens */}
+        <div className="hidden sm:block">
+          <table className="min-w-full table-auto">
+            {/* Table Header */}
+            <thead>
+              <tr className="bg-[#F9FAFB] border-b border-[#E5E7EB]">
+                <th className="w-[48px] py-3 px-6">
                   <input type="checkbox" className="border border-[#D1D5DB] rounded-[4px] w-[18px] h-[18px]" />
-                </td>
-                <td className="py-4 px-6 text-[#111827] text-sm font-medium">{row.name}</td>
-                <td className="py-4 px-6 text-[#111827] text-sm">{row.phone}</td>
-                <td className="py-4 px-6 text-[#111827] text-sm">{row.balance}</td>
-                <td className="py-4 px-6 text-[#111827] text-sm">{row.group}</td>
-                <td className="py-4 px-6 text-[#111827] text-sm">{row.teacher}</td>
-                <td className="py-4 px-6 text-[#111827] text-sm">{row.reason}</td>
-                <td className="py-4 px-6">
-                  <div className="flex items-center gap-2">
-                    <button className="text-[#9CA3AF] hover:text-[#111827] hover:bg-gray-100 w-8 h-8 rounded-md">
-                      <RotateCcw className="h-[18px] w-[18px]" />
-                    </button>
-                    <button className="text-[#9CA3AF] hover:text-[#111827] hover:bg-gray-100 w-8 h-8 rounded-md">
-                      <PencilIcon className="h-[18px] w-[18px]" />
-                    </button>
-                  </div>
-                </td>
+                </th>
+                <th className="text-[#374151] font-medium py-3 px-6 text-sm">O'quvchining ismi</th>
+                <th className="text-[#374151] font-medium py-3 px-6 text-sm">Telefon raqam</th>
+                <th className="text-[#374151] font-medium py-3 px-6 text-sm">Balans</th>
+                <th className="text-[#374151] font-medium py-3 px-6 text-sm">Guruh</th>
+                <th className="text-[#374151] font-medium py-3 px-6 text-sm">O'qituvchi</th>
+                <th className="text-[#374151] font-medium py-3 px-6 text-sm">Sababi</th>
+                <th className="w-[100px]"></th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            {/* Table Body */}
+            <tbody>
+              {tableData.map((row, index) => (
+                <tr key={index} className="border-b border-[#E5E7EB] hover:bg-gray-50">
+                  <td className="py-4 px-6">
+                    <input type="checkbox" className="border border-[#D1D5DB] rounded-[4px] w-[18px] h-[18px]" />
+                  </td>
+                  <td className="py-4 px-6 text-[#111827] text-sm font-medium">{row.name}</td>
+                  <td className="py-4 px-6 text-[#111827] text-sm">{row.phone}</td>
+                  <td className="py-4 px-6 text-[#111827] text-sm">{row.balance}</td>
+                  <td className="py-4 px-6 text-[#111827] text-sm">{row.group}</td>
+                  <td className="py-4 px-6 text-[#111827] text-sm">{row.teacher}</td>
+                  <td className="py-4 px-6 text-[#111827] text-sm">{row.reason}</td>
+                  <td className="py-4 px-6">
+                    <div className="flex items-center gap-2">
+                      <button className="text-[#9CA3AF] hover:text-[#111827] hover:bg-gray-100 w-8 h-8 rounded-md">
+                        <RotateCcw className="h-[18px] w-[18px]" />
+                      </button>
+                      <button className="text-[#9CA3AF] hover:text-[#111827] hover:bg-gray-100 w-8 h-8 rounded-md">
+                        <PencilIcon className="h-[18px] w-[18px]" />
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
+        {/* Card Layout for Mobile Screens */}
+        <div className="block sm:hidden">
+          {tableData.map((row, index) => (
+            <div key={index} className="mb-4 p-4 bg-white rounded-lg shadow-md">
+              <h2 className="text-lg font-semibold text-[#111827]">{row.name}</h2>
+              <p className="text-sm text-[#6B7280]">{row.phone}</p>
+              <p className="text-sm text-[#111827]">Balans: {row.balance}</p>
+              <p className="text-sm text-[#111827]">Guruh: {row.group}</p>
+              <p className="text-sm text-[#111827]">O'qituvchi: {row.teacher}</p>
+              <p className="text-sm text-[#111827]">Sababi: {row.reason}</p>
+              <div className="flex gap-2 mt-2">
+                <button className="text-[#9CA3AF] hover:text-[#111827] hover:bg-gray-100 w-8 h-8 rounded-md">
+                  <RotateCcw className="h-[18px] w-[18px]" />
+                </button>
+                <button className="text-[#9CA3AF] hover:text-[#111827] hover:bg-gray-100 w-8 h-8 rounded-md">
+                  <PencilIcon className="h-[18px] w-[18px]" />
+                </button>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );

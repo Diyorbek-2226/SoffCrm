@@ -13,7 +13,7 @@ const GroupsInfo = lazy(() => import("../pages/groups/GroupsInfo"));
 const RoomSelection = lazy(() => import("../pages/rooms/RoomDetails"));
 const Schedule = lazy(() => import("../pages/timetable/Timetable"));
 const StudentCard = lazy(() => import("../Components/StudentCard/Attendance"));
-const StudentList = lazy(() => import("../Components/StudentCard/StudentList"));
+const StudentList = lazy(() => import("../Components/StudentCard/ArchivedList"));
 const ActiveStudent = lazy(() => import("../Components/StudentCard/ActiveStudent"));
 const ArchivedList =lazy(()=> import("../Components/StudentCard/ArchivedList"));
 const ParentList =lazy(()=> import("../Components/StudentCard/ParentList"));
