@@ -1,48 +1,55 @@
 import React from "react";
-import { Pencil, Trash } from "lucide-react";
+import { Pencil, Trash, Filter, Plus } from "lucide-react";
+
+const employees = [
+  { name: "Aktam Zaripov", birth: "26-dekabr, 1994", gender: "Erkak", role: "Moderator", branch: "Chilonzor", phone: "+998 94 555 66 00" },
+  { name: "Sherali Jo’rayev", birth: "26-dekabr, 1994", gender: "Erkak", role: "O‘qituvchi", branch: "Namangan", phone: "+998 94 555 66 00" },
+  { name: "John Doe", birth: "26-dekabr, 1994", gender: "Ayol", role: "Administrator", branch: "Chilonzor", phone: "+998 94 555 66 00" },
+  { name: "John Doe", birth: "26-dekabr, 1994", gender: "Ayol", role: "Administrator", branch: "Chilonzor", phone: "+998 94 555 66 00" },
+  { name: "John Doe", birth: "26-dekabr, 1994", gender: "Ayol", role: "Administrator", branch: "Chilonzor", phone: "+998 94 555 66 00" },
+  { name: "John Doe", birth: "26-dekabr, 1994", gender: "Ayol", role: "Administrator", branch: "Chilonzor", phone: "+998 94 555 66 00" },
+];
 
 const EmployeesTable = () => {
   return (
-    <div className="p-6 bg-blue-100 rounded-lg w-full">
-      <div className="flex justify-between items-center mb-4">
+    <div className="p-6" style={{ backgroundColor: "rgba(250, 250, 250, 1)" }}>
+      <div className="flex justify-between items-center mb-4 bg-pink-200 p-4 rounded-t-lg">
         <h2 className="text-xl font-semibold">Hodimlar</h2>
-        <button className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600">
-          + Hodim qo‘shish
-        </button>
+        <div className="flex gap-2">
+          <button className="bg-gray-200 text-gray-700 px-4 py-2 rounded-lg flex items-center gap-2 hover:bg-gray-300">
+            <Filter size={16} /> Saralash
+          </button>
+          <button className="bg-pink-500 text-white px-4 py-2 rounded-lg flex items-center gap-2 hover:bg-pink-600">
+            <Plus size={16} /> Hodim qo‘shish
+          </button>
+        </div>
       </div>
 
-      {/* For larger screens (table layout) */}
-      <div className="overflow-x-auto lg:block hidden">
-        <table className="w-full border-collapse bg-white rounded-lg">
+      {/* Large Screen: Table View */}
+      <div className="hidden lg:block overflow-x-auto bg-white rounded-lg">
+        <table className="w-full text-left">
           <thead>
-            <tr className="bg-blue-50">
-              <th className="text-left py-3 px-4 font-medium text-gray-700 border-b">Ismi</th>
-              <th className="text-left py-3 px-4 font-medium text-gray-700 border-b">Lavozimi</th>
-              <th className="text-left py-3 px-4 font-medium text-gray-700 border-b">Telefon</th>
-              <th className="py-3 px-4 font-medium text-gray-700 border-b text-center">Actions</th>
+            <tr className="bg-gray-100 text-gray-700">
+              <th className="py-3 px-4">To‘liq ismi</th>
+              <th className="py-3 px-4">Tug‘ilgan sanasi</th>
+              <th className="py-3 px-4">Jinsi</th>
+              <th className="py-3 px-4">Vazifasi</th>
+              <th className="py-3 px-4">Filial</th>
+              <th className="py-3 px-4">Telefon raqami</th>
+              <th className="py-3 px-4 text-center">Amallar</th>
             </tr>
           </thead>
           <tbody>
-            {[
-              {
-                name: "Aliyev Alisher",
-                position: "Filial direktori",
-                phone: "+998 90 123 45 67",
-              },
-              {
-                name: "Karimova Madina",
-                position: "Administrator",
-                phone: "+998 93 987 65 43",
-              },
-              {
-                name: "Usmonov Anvar",
-                position: "O‘qituvchi",
-                phone: "+998 91 765 43 21",
-              },
-            ].map((employee, index) => (
-              <tr key={index} className="border-t">
+            {employees.map((employee, index) => (
+              <tr
+                key={index}
+                className={`hover:bg-gray-50 ${index !== employees.length - 1 ? "border-b border-gray-300" : ""}`}
+              >
                 <td className="py-3 px-4 text-gray-700">{employee.name}</td>
-                <td className="py-3 px-4 text-gray-600">{employee.position}</td>
+                <td className="py-3 px-4 text-gray-600">{employee.birth}</td>
+                <td className="py-3 px-4 text-gray-600">{employee.gender}</td>
+                <td className="py-3 px-4 text-gray-600">{employee.role}</td>
+                <td className="py-3 px-4 text-gray-600">{employee.branch}</td>
                 <td className="py-3 px-4 text-gray-600">{employee.phone}</td>
                 <td className="py-3 px-4 text-center">
                   <div className="flex justify-center items-center gap-2">
@@ -60,35 +67,25 @@ const EmployeesTable = () => {
         </table>
       </div>
 
-      {/* For smaller screens (card layout) */}
-      <div className="lg:hidden">
-        {[
-          {
-            name: "Aliyev Alisher",
-            position: "Filial direktori",
-            phone: "+998 90 123 45 67",
-          },
-          {
-            name: "Karimova Madina",
-            position: "Administrator",
-            phone: "+998 93 987 65 43",
-          },
-          {
-            name: "Usmonov Anvar",
-            position: "O‘qituvchi",
-            phone: "+998 91 765 43 21",
-          },
-        ].map((employee, index) => (
-          <div key={index} className="bg-white shadow-md rounded-lg mb-6 p-6">
-            <h3 className="text-xl font-semibold text-gray-800">{employee.name}</h3>
-            <p className="text-sm text-gray-600">Lavozimi: {employee.position}</p>
-            <p className="text-sm text-gray-600">Telefon: {employee.phone}</p>
-            <div className="flex justify-end gap-2 mt-4">
-              <button className="p-2 hover:bg-gray-100 rounded-lg">
-                <Pencil size={18} className="text-blue-500" />
+      {/* Small Screen: Card View */}
+      <div className="lg:hidden grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+        {employees.map((employee, index) => (
+          <div
+            key={index}
+            className="bg-white p-4 border border-gray-200 rounded-lg shadow-sm hover:shadow-lg"
+          >
+            <h3 className="font-semibold text-gray-700">{employee.name}</h3>
+            <p className="text-gray-600">Tug‘ilgan sanasi: {employee.birth}</p>
+            <p className="text-gray-600">Jinsi: {employee.gender}</p>
+            <p className="text-gray-600">Vazifasi: {employee.role}</p>
+            <p className="text-gray-600">Filial: {employee.branch}</p>
+            <p className="text-gray-600">Telefon: {employee.phone}</p>
+            <div className="mt-4 flex justify-between items-center">
+              <button className="text-blue-500 hover:text-blue-700">
+                <Pencil size={18} />
               </button>
-              <button className="p-2 hover:bg-gray-100 rounded-lg">
-                <Trash size={18} className="text-red-500" />
+              <button className="text-red-500 hover:text-red-700">
+                <Trash size={18} />
               </button>
             </div>
           </div>
