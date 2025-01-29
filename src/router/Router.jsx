@@ -20,6 +20,7 @@ const ParentList =lazy(()=> import("../Components/StudentCard/ParentList"));
 const OrderList =lazy(()=> import("../Components/OrderDetails/OrderList"));
 const FirstLesson =lazy(()=> import("../Components/OrderDetails/FirstLesson"));
 const NewStudents=lazy(()=> import("../Components/OrderDetails/NewStudents"));
+const OrderInformation =lazy(()=> import("../Components/OrderDetails/OrderInformation"));
 const Manager = lazy(() => import("../pages/setings/manager/Manager"));
 const Tulovlar = lazy(() => import("../pages/setings/manager/Tulovlar"));
 const Darajalar = lazy(() => import("../pages/setings/manager/Darajalar"));
@@ -28,6 +29,7 @@ const Tulov = lazy(() => import("../pages/setings/talabalar/Tulov"));
 const Kategoriya = lazy(() => import("../pages/setings/talabalar/Kategoriya"));
 const Cours = lazy(() => import("../Components/Cours/cours"));
 const CoursTable = lazy(() => import("../Components/Cours/CoursTable"));
+const CourseList = lazy(() => import("../Components/Cours/CourseList"));
 const RolesTable = lazy(() => import("../Components/Rols/RolesTable"));
 const EmployeesTable = lazy(() => import("../Components/Rols/EmployeesTable"));
 const Teacher = lazy(() => import("../pages/setings/teacher/Teacher"));
@@ -131,71 +133,81 @@ const routes = [
       },
       {
         id: 20,
+        path: "buyurtma/ro'yxati",
+        element: <OrderInformation/>,
+      },
+      {
+        id: 21,
         path: "Yangi/talabalar",
         element: <NewStudents/>,
       },
       {
-        id: 21,
+        id: 22,
         path: "manager",
         element: <Manager />,
       },
       {
-        id: 22,
+        id: 23,
         path: "manager/tulovlar",
         element: <Tulovlar />
       },
       {
-        id: 23,
+        id: 24,
         path: "manager/darajalar",
         element: <Darajalar />
       },
       {
-        id: 24,
+        id: 25,
         path: "talabalar",
         element: <Talaba />
       },
       {
-        id: 25,
+        id: 26,
         path: "talabalar/tulovlar",
         element: <Tulov />
       },
       {
-        id: 26,
+        id: 27,
         path: "talabalar/kategoriya",
         element: <Kategoriya />
       },
       {
-        id: 27,
+        id: 28,
         path: "kurs",
         element: <Cours/>
       },
       {
-        id: 28,
+        id: 29,
         path: "kurs/ro'yxati",
         element: <CoursTable/>
       },
       {
-        id: 29,
+        id: 30,
+        path: "kurslar/ro'yxati",
+        element: <CourseList/>
+      },
+      {
+        id: 31,
         path: "ro'llar",
         element: <RolesTable/>
       },
       {
-        id: 30,
+        id: 32,
         path: "hodimlar",
         element: <EmployeesTable/>
       },
       {
-        id: 31,
+        id: 33,
         path: "teacher",
         element: <Teacher/>
       },
       {
-        id: 32,
+        id: 34,
         path: "teacher/kpi",
         element: <Kpi/>
       },
       {
-        id: 33,
+        id: 35,
         path: "teacher/oylik",
         element: <Oylik/>
       }
