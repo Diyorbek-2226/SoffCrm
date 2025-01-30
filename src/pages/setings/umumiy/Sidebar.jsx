@@ -12,7 +12,7 @@ function Sidebar() {
   ];
 
   return (
-    <div className="hidden lg:block min-h-screen w-[300px] bg-white shadow-sm border-r">
+    <div className="hidden md:block min-h-screen w-[300px] bg-white shadow-sm border-r">
       <ul className="space-y-3 py-6 text-gray-700">
         {menuItems.map((item, index) => (
           <NavLink
