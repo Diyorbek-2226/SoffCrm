@@ -23,7 +23,13 @@ const menuItems = [
   },
   { icon: DollarSign, label: "Moliya", path: "#" },
   { icon: GraduationCap, label: "Talaba", path: "#" },
-  { icon: Users, label: "Guruhlar", path: "#" },
+  { icon: Users, label: "Guruhlar", path: "#",
+    subItems:[
+      {label:"Guruhlar",path:"/group"},
+      {label:"Dars Jadvali",path:"/dars/jadval"},
+      {label:"Xonalar",path:"/xonalar"},
+    ]
+   },
   { icon: BookOpen, label: "Kurslar", path: "#" },
   { icon: UserCog, label: "HR", path: "#", },
   {

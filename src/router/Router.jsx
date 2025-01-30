@@ -10,7 +10,8 @@ const Sorovnoma = lazy(() => import("../pages/setings/umumiy/Sorovnoma"));
 const RaqamniBelgilash = lazy(() => import("../pages/setings/umumiy/RaqamniBelgilash"));
 const Groups = lazy(() => import("../pages/groups/Groups"));
 const GroupsInfo = lazy(() => import("../pages/groups/GroupsInfo"));
-const RoomSelection = lazy(() => import("../pages/rooms/RoomDetails"));
+const GroupRoom = lazy(() => import("../pages/groups/GroupRoom"));
+const GroupList = lazy(() => import("../pages/groups/GroupList"));
 const Schedule = lazy(() => import("../pages/timetable/Timetable"));
 const StudentCard = lazy(() => import("../Components/StudentCard/Attendance"));
 const StudentList = lazy(() => import("../Components/StudentCard/ArchivedList"));
@@ -89,125 +90,130 @@ const routes = [
       {
         id: 11,
         path: "xonalar",
-        element: <RoomSelection/>,
+        element: <GroupRoom/>,
       },
       {
         id: 12,
+        path: "dars/jadval",
+        element: <GroupList/>,
+      },
+      {
+        id: 13,
         path: "dars",
         element: <Schedule/>,
       },
       {
-        id: 13,
+        id: 14,
         path: "davomat",
         element: <StudentCard/>,
       },
       {
-        id: 14,
+        id: 15,
         path: "jadval",
         element: <StudentList/>,
       },
       {
-        id: 15,
+        id: 16,
         path: "aktiv",
         element: <ActiveStudent/>,
       },
       {
-        id: 16,
+        id: 17,
         path: "arxiv",
         element: <ArchivedList/>,
       },
       {
-        id: 17,
+        id: 18,
         path: "ota-ona",
         element: <ParentList/>,
       },
       {
-        id: 18,
+        id: 19,
         path: "buyurtma",
         element: <OrderList/>,
       },
       {
-        id: 19,
+        id: 20,
         path: "birinchi/darsga",
         element: <FirstLesson/>,
       },
       {
-        id: 20,
+        id: 21,
         path: "buyurtma/ro'yxati",
         element: <OrderInformation/>,
       },
       {
-        id: 21,
+        id: 22,
         path: "Yangi/talabalar",
         element: <NewStudents/>,
       },
       {
-        id: 22,
+        id: 23,
         path: "manager",
         element: <Manager />,
       },
       {
-        id: 23,
+        id: 24,
         path: "manager/tulovlar",
         element: <Tulovlar />
       },
       {
-        id: 24,
+        id: 25,
         path: "manager/darajalar",
         element: <Darajalar />
       },
       {
-        id: 25,
+        id: 26,
         path: "talabalar",
         element: <Talaba />
       },
       {
-        id: 26,
+        id: 27,
         path: "talabalar/tulovlar",
         element: <Tulov />
       },
       {
-        id: 27,
+        id: 28,
         path: "talabalar/kategoriya",
         element: <Kategoriya />
       },
       {
-        id: 28,
+        id: 29,
         path: "kurs",
         element: <Cours/>
       },
       {
-        id: 29,
+        id: 30,
         path: "kurs/ro'yxati",
         element: <CoursTable/>
       },
       {
-        id: 30,
+        id: 31,
         path: "kurslar/ro'yxati",
         element: <CourseList/>
       },
       {
-        id: 31,
+        id: 32,
         path: "ro'llar",
         element: <RolesTable/>
       },
       {
-        id: 32,
+        id: 33,
         path: "hodimlar",
         element: <EmployeesTable/>
       },
       {
-        id: 33,
+        id: 34,
         path: "teacher",
         element: <Teacher/>
       },
       {
-        id: 34,
+        id: 35,
         path: "teacher/kpi",
         element: <Kpi/>
       },
       {
-        id: 35,
+        id: 36,
         path: "teacher/oylik",
         element: <Oylik/>
       }
