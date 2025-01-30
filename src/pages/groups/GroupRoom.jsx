@@ -27,17 +27,17 @@ const Button = ({ children, onClick, className, variant = "primary" }) => {
 // Rooms komponentasi
 const RoomSelection = () => {
   return (
-    <div className="flex flex-col flex-1 p-3 bg-gray-100 ml-[-1em]">
+    <div className="flex flex-col flex-1 p-3">
       {/* Header */}
       <div className="flex justify-between bg-yellow-50 h-20 max-w-screen items-center mb-6">
-        <h1 className="text-[29px] font-montserrat font-semibold text-gray-800 ml-[20px] leading-[28px]">
-          Xonalar
-        </h1>
+            <h1 className="font-montserrat text-[20px] font-semibold text-[rgba(37,62,95,1)] leading-[28px] text-left underline-offset-4 text-decoration-skip-ink-none ml-[20px]">
+        Xonalar
+      </h1>
+
 
         <Button
           variant="custom"
           className="hover:bg-green-600 font-sans text-base mr-[20px]"
-          style={{ backgroundColor: 'rgba(160, 217, 17, 1)' }}
         >
           + Xona qo'shish
         </Button>
@@ -49,27 +49,28 @@ const RoomSelection = () => {
         <div className="hidden sm:block">
           <table className="table-auto w-full text-left border-none">
             <thead>
-              <tr className="bg-white-100 text-lg font-semibold text-gray-700 font-sans">
-                <th className="p-2 text-base">Xona</th>
-                <th className="p-2 text-base">O'rinlar soni</th>
-              </tr>
+                      <tr className="bg-white-100 text-lg font-medium text-[rgba(146,159,175,1)] font-sans">
+            <th className="p-2 text-[16px] leading-[24px] text-left underline-offset-4 text-decoration-skip-ink-none">
+              Xona
+            </th>
+          </tr>
+
             </thead>
             <tbody>
               {[{
                 room: "A_5",
-                seats: "25",
+              
               },
               {
                 room: "A_14",
-                seats: "30",
+                
               },
               {
                 room: "A_8",
-                seats: "20",
+               
               }].map((item, index) => (
-                <tr key={index} className={index % 2 === 1 ? "bg-yellow-50" : "bg-white font-sans text-sm"}>
+                <tr key={index} className={index % 2 === 1 ? "bg-yellow-50" : "bg-white font-sans text-sm border-b border-gray-200"}>
                   <td className="p-3 text-gray-800">{item.room}</td>
-                  <td className="p-3 text-gray-800">{item.seats}</td>
                   <td className="p-3 flex gap-2">
                     <Button variant="outline" className="text-blue-500 hover:bg-blue-500 hover:text-white font-sans">
                       <img src={ideicon} alt="Edit Icon" />
@@ -88,15 +89,14 @@ const RoomSelection = () => {
         <div className="block sm:hidden">
           {[{
             room: "A_5",
-            seats: "25",
+            
           },
           {
             room: "A_14",
-            seats: "30",
+           
           },
           {
             room: "A_8",
-            seats: "20",
           }].map((item, index) => (
             <div key={index} className="mb-4 p-4 bg-white rounded shadow-md">
               <h2 className="text-lg font-semibold text-gray-800">{item.room}</h2>

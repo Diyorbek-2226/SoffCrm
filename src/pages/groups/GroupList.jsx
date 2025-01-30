@@ -27,12 +27,13 @@ const Button = ({ children, onClick, className, variant = "primary" }) => {
 // Dars jadvali komponentasi
 const GroupList = () => {
   return (
-    <div className="flex flex-col flex-1 p-3" style={{ backgroundColor: 'rgba(250, 250, 250, 1)' }}>
+    <div className="flex flex-col flex-1 p-3">
       {/* Header */}
       <div className="flex justify-between bg-yellow-50 h-20 max-w-screen items-center mb-6">
-        <h1 className="text-[29px] font-montserrat font-semibold text-gray-800 ml-[20px] leading-[28px]">
+              <h1 className="font-montserrat text-[20px] font-semibold text-[rgba(37,62,95,1)] leading-[28px] text-left underline-offset-4 text-decoration-skip-ink-none ml-[20px]">
           Dars jadvali
         </h1>
+
 
         <Button
           variant="custom"
@@ -47,9 +48,12 @@ const GroupList = () => {
         <div className="hidden sm:block">
           <table className="table-auto w-full text-left border-none">
             <thead>
-              <tr className="bg-white-100 text-lg font-semibold text-gray-700 font-sans">
-                <th className="p-2 text-base">Guruh</th>
+                          <tr className="bg-white-100 text-lg font-medium text-[rgba(146,159,175,1)] font-sans">
+                <th className="p-2 text-[16px] leading-[24px] text-left underline-offset-4 text-decoration-skip-ink-none">
+                  Guruh
+                </th>
               </tr>
+
             </thead>
             <tbody>
               {[{

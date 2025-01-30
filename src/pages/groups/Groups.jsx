@@ -78,10 +78,12 @@ const Groups = () => {
   };
 
   return (
-    <div className="flex flex-col flex-1 p-4 bg-[rgba(250,250,250,1)]">
+    <div className="flex flex-col flex-1 p-4 bg-white">
       {/* Header */}
       <div className="flex justify-between items-center bg-yellow-50 h-20 px-4 mb-6">
-        <h1 className="text-2xl font-semibold text-gray-800">Guruhlar</h1>
+        <h1 className="font-montserrat text-[20px] font-semibold text-[rgba(37,62,95,1)] leading-[28px] text-left underline-offset-4 text-decoration-skip-ink-none">
+          Guruhlar
+        </h1>
         <Button variant="custom" className="font-sans text-base">
           + Guruh qo'shish
         </Button>
@@ -91,16 +93,16 @@ const Groups = () => {
       <div className="hidden sm:block">
         <table className="table-auto w-full text-left">
           <thead>
-            <tr className="bg-white text-lg font-semibold text-gray-700">
-              <th className="p-3" style={{ ...headerStyle }}>Guruh</th>
-              <th className="p-3" style={{ ...headerStyle }}>Kurs</th>
-              <th className="p-3" style={{ ...headerStyle }}>Level</th>
-              <th className="p-3" style={{ ...headerStyle }}>Kun</th>
-              <th className="p-3" style={{ ...headerStyle }}>Boshlanishi</th>
-              <th className="p-3" style={{ ...headerStyle }}>Tugashi</th>
-              <th className="p-3" style={{ ...headerStyle }}>Turi</th>
-              <th className="p-3" style={{ ...headerStyle }}>Xona</th>
-              <th className="p-3" style={{ ...headerStyle }}>Status</th>
+            <tr className="bg-white text-[16px] font-medium text-[rgba(146,159,175,1)] leading-[24px] text-left underline-offset-4 text-decoration-skip-ink-none">
+              <th className="p-3" style={headerStyle}>Guruh</th>
+              <th className="p-3" style={headerStyle}>Kurs</th>
+              <th className="p-3" style={headerStyle}>Level</th>
+              <th className="p-3" style={headerStyle}>Kun</th>
+              <th className="p-3" style={headerStyle}>Boshlanishi</th>
+              <th className="p-3" style={headerStyle}>Tugashi</th>
+              <th className="p-3" style={headerStyle}>Turi</th>
+              <th className="p-3" style={headerStyle}>Xona</th>
+              <th className="p-3" style={headerStyle}>Status</th>
             </tr>
           </thead>
           <tbody>
@@ -129,31 +131,6 @@ const Groups = () => {
             ))}
           </tbody>
         </table>
-      </div>
-
-      {/* Card-style layout for smaller screens */}
-      <div className="block sm:hidden">
-        {data.map((item, index) => (
-          <div key={index} className="mb-4 p-4 bg-white rounded shadow-md border-t border-gray-300">
-            <h2 className="text-lg font-semibold text-gray-800 mb-2">{item.group}</h2>
-            <p className="text-gray-600" style={textStyle}>Kurs: {item.course}</p>
-            <p className="text-gray-600" style={textStyle}>Level: {item.level}</p>
-            <p className="text-gray-600" style={textStyle}>Kun: {item.day}</p>
-            <p className="text-gray-600" style={textStyle}>Boshlanishi: {item.start}</p>
-            <p className="text-gray-600" style={textStyle}>Tugashi: {item.end}</p>
-            <p className="text-gray-600" style={textStyle}>Turi: {item.type}</p>
-            <p className="text-gray-600" style={textStyle}>Xona: {item.room}</p>
-            <p className="text-gray-600" style={textStyle}>Status: {item.status}</p>
-            <div className="flex gap-2 mt-2">
-              <Button variant="outline" className="text-blue-500 hover:bg-blue-500 hover:text-white">
-                <img src={ideicon} alt="Edit Icon" />
-              </Button>
-              <Button variant="outline" className="text-red-500 hover:text-white">
-                <img src={deleicon} alt="Delete Icon" />
-              </Button>
-            </div>
-          </div>
-        ))}
       </div>
     </div>
   );
