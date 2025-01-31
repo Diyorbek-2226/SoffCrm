@@ -5,7 +5,7 @@ export default function Modal({ isOpen, onClose, children }) {
 
   return (
     <div className="fixed inset-0 bg-[#1a293c80] backdrop-blur-[5px] flex justify-center items-center z-50">
-      <div className="bg-white p-6 rounded-lg shadow-lg m-1 md:w-[500px]">
+      <div className="bg-white p-6 rounded-lg shadow-lg m-5 w-full md:w-[500px]">
         {children}
         <div className="flex justify-end gap-2 mt-4">
           <button
