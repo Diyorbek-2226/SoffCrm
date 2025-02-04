@@ -12,13 +12,14 @@ import {
   ChevronDown,
   X,
 } from "lucide-react";
+import { Link} from "react-router-dom";
 
 const menuItems = [
-  { icon: Timer, label: "Anlitika", path: "#" },
+  { icon: Timer, label: "Anlitika", path: "/analitic" },
   {
     icon: ClipboardList,
     label: "Buyurtma",
-    path: "#",
+    path: "buyurtma",
     badge: "73 Hug × 20 Hug",
   },
   { icon: DollarSign, label: "Moliya", path: "#" },
@@ -35,7 +36,7 @@ const menuItems = [
   {
     icon: Settings,
     label: "Sozlamalar",
-    path: "#",
+    path: "/sozlamalar",
     subItems: [
       { label: "Umumiy Sozlamalar", path: "/sozlamalar" },
       { label: "Manager", path: "/manager" },
@@ -97,7 +98,7 @@ export function Sidebar({ isOpen, onClose }) {
             >
               <div className="flex items-center gap-3">
                 <item.icon className="w-5 h-5" />
-                <span className="text-md">{item.label}</span>
+                <Link to={item.path} className="text-md">{item.label}</Link>
               </div>
               {item.subItems ? (
                 expandedMenu === item.label ? (
@@ -110,13 +111,13 @@ export function Sidebar({ isOpen, onClose }) {
             {item.subItems && expandedMenu === item.label && (
               <div className="ml-6 mt-1">
                 {item.subItems.map((subItem) => (
-                  <a
+                  <Link
                     key={subItem.label}
                     href={subItem.path}
                     className="block px-4 py-2 text-sm text-gray-400 hover:bg-white/10 hover:text-[#0ea5e9] rounded-lg"
                   >
                     {subItem.label}
-                  </a>
+                  </Link>
                 ))}
               </div>
             )}
