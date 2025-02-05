@@ -1,9 +1,12 @@
-import { Suspense, useEfect } from "react";
+import { Suspense, useEffect } from "react";
 import { Routes, Route } from "react-router-dom"; 
 import routes from "./router/Router"; 
 
 function App() {
     const tele = window.Telegram.WebApp
+ useEffect(() => {
+    tele.ready()
+  }, [tele]) // Added tele to dependencies
 
   return (
     <Suspense fallback={<div>Loading...</div>}>
