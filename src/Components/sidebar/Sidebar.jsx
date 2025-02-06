@@ -31,7 +31,13 @@ const menuItems = [
       {label:"Xonalar",path:"/xonalar"},
     ]
    },
-  { icon: BookOpen, label: "Kurslar", path: "#" },
+  { icon: BookOpen, label: "Kurslar", path: "#",
+    subItems : [
+      {label:"Kurslar",path:"/kurs"},
+      {label:"Kurslar ro’yxati",path:"/kurslar/ro'yxati"},
+      {label:"Kurslar yo’nalishi",path:"/kurs/ro'yxati"},
+    ]
+   },
   { icon: UserCog, label: "HR", path: "#", },
   {
     icon: Settings,

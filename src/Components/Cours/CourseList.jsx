@@ -32,21 +32,25 @@ const KurslarRoyxati = () => {
   };
 
   return (
-    <div className="p-6 bg-gray-50 min-h-screen">
+    <div>
       {/* Header */}
-      <div className="flex flex-col sm:flex-row justify-between items-center mb-6 bg-teal-100 p-4 rounded-lg">
-        <h2 className="text-2xl font-semibold text-center sm:text-left">Kurslar ro’yxati</h2>
-        <button className="bg-teal-400 text-white px-4 py-2 rounded-lg hover:bg-teal-500 transition mt-2 sm:mt-0">
+      <div className="flex flex-col sm:flex-row justify-between items-center mb-6 p-4 rounded-lg" style={{ backgroundColor: 'rgba(230, 255, 251, 1)' }}>
+            <h2 className="text-2xl font-semibold text-center sm:text-left" style={{ color: 'rgba(37, 62, 95, 1)' }}>
+        Kurslar ro’yxati
+      </h2>
+        <button
+          className="text-white px-4 py-2 rounded-lg hover:bg-teal-500 transition mt-2 sm:mt-0"
+          style={{ backgroundColor: 'rgba(19, 194, 194, 1)' }}
+        >
           + Kurs qo’shish
         </button>
       </div>
-
       {/* Kurslar ro‘yxati */}
-      <div className="bg-white p-4 rounded-lg">
+      <div className="p-4 rounded-lg">
         <h3 className="text-lg font-semibold mb-4">Ingliz tili</h3>
 
         {courseList.map((course, index) => (
-          <div key={index} className="flex flex-col sm:flex-row items-start sm:items-center justify-between bg-white p-4 rounded-lg mb-2">
+          <div key={index} className="flex flex-col sm:flex-row items-start sm:items-center justify-between p-4 rounded-lg mb-2">
             {/* Chap tomonda kurs ma'lumotlari */}
             <div className="w-full sm:w-1/3 mb-2 sm:mb-0">
               <div className="text-lg font-medium flex items-center">
@@ -78,7 +82,7 @@ const KurslarRoyxati = () => {
                   key={i}
                   src={img}
                   alt="Teacher"
-                  className="w-8 h-8 rounded-full border border-white -ml-2"
+                  className="w-8 h-8 rounded-full -ml-2"
                 />
               ))}
               <span className="text-gray-500 text-sm">2+</span>
@@ -104,7 +108,7 @@ const KurslarRoyxati = () => {
       <div className="mt-4">
         {["Rus tili", "Matematika", "Dasturlash", "Grafik dizayn", "UX/UI dizayn"].map(
           (category, index) => (
-            <div key={index} className="flex justify-between items-center p-4 bg-white rounded-lg mb-2">
+            <div key={index} className="flex justify-between items-center p-4 rounded-lg mb-2">
               <span>{category}</span>
               <div className="flex space-x-2">
                 <button className="text-gray-500 hover:text-gray-700">
